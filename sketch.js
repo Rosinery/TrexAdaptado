@@ -132,7 +132,7 @@ function draw() {
     obstaclesGroup.setLifetimeEach(-1);
     cloudsGroup.setLifetimeEach(-1);
     
-    if(touches.length>0 || keyDown("SPACE")) {      
+    if(touches.length>0 || keyDown("SPACE") || mousePressedOver(restart)) {      
       reset();
       touches = []
     }
@@ -166,7 +166,7 @@ function spawnClouds() {
 
 function spawnObstacles() {
   if(frameCount % 60 === 0) {
-    var obstacle = createSprite(600,height-95,20,30);
+    var obstacle = createSprite(1200,height-95,20,30);
     obstacle.setCollider('circle',0,0,45)
     // obstacle.debug = true
   
